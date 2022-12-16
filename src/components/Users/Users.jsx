@@ -25,6 +25,10 @@ const Users = () => {
   const handleKeyDown = async (e) => {
     if (e.key === "Enter") {
       const username = e.target.value;
+      if (!username) {
+        alert("username is required");
+        return;
+      }
       const isExist = users.includes(username);
 
       if (!isExist) {
