@@ -28,6 +28,13 @@ const SkillList = () => {
       alert("Skill name is required");
       return;
     }
+
+    const isSkillExisted = listSkill.find((skill) => skill.name === skillName);
+    if (isSkillExisted) {
+      alert("Skill is existed");
+      return;
+    }
+
     const addingSkill = {
       name: skillName,
       level: skillLevel,
